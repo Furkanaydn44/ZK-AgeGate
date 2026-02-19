@@ -1,0 +1,32 @@
+{
+  "name": "zk-agegate",
+  "version": "1.0.0",
+  "description": "Privacy-Preserving Age Verification System using Zero-Knowledge Proofs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "compile-circuit": "circom circuits/ageCheck.circom --r1cs --wasm --sym -o build",
+    "setup": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
+    "compile": "hardhat compile --config hardhat.config.cjs",
+    "test:contracts": "hardhat test --config hardhat.config.cjs",
+    "test:circuit": "node test/circuit.test.mjs",
+    "deploy:sepolia": "hardhat run scripts/deploy.cjs --network sepolia --config hardhat.config.cjs",
+    "deploy:local": "hardhat run scripts/deploy.cjs --network hardhat --config hardhat.config.cjs"
+  },
+  "dependencies": {
+    "ethers": "^6.13.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "snarkjs": "^0.7.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "circomlib": "^2.0.5",
+    "dotenv": "^16.4.7",
+    "hardhat": "^2.22.18",
+    "vite": "^6.1.0"
+  }
+}

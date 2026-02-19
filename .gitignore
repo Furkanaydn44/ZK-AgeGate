@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+cache/
+artifacts/
+*.ptau
+*.wtns
+proof.json
+public.json
+.env
+.DS_Store
